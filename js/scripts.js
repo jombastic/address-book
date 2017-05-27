@@ -9,8 +9,8 @@ $(document).ready(function() {
     event.preventDefault();
   });
   $("#contacts").on('click', '.newContact', function() {
-    $("#contacts .newContact p").hide();
-    $(this).find('p').show();
+    $("#contacts .newContact").not(this).find("p").hide();
+    $(this).find('p').toggle();
   });
   $("#contacts").on('click', '.delete', function() {
     $(this).closest(".newContact").remove();
